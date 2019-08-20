@@ -5,6 +5,12 @@ import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
 class TodoItem extends Component {
+
+  shouldComponentUpdate(nextProps, nextState) {
+    // 항목 변경 시 목록 전체 리렌더링 방지
+    return this.props.done !== nextProps.done;
+  }
+
   render() {
     const { done, children, onToggle, onRemove } = this.props;
 
