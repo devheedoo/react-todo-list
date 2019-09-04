@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import PageTemplate from './PageTemplate';
-import TodoInput from './TodoInput';
-import TodoList from './TodoList';
+// import TodoInput from './TodoInput';
+// import TodoList from './TodoList';
+import TodoInputContainer from '../containers/TodoInputContainer';
+import TodoListContainer from '../containers/TodoListContainer';
 
+/* 리덕스 사용 전 코드
 // 성능 데스트용 데이터
 const initialTodos = new Array(500).fill(0).map(
   (foo, index) => ({ id: index, text: `일정 ${index}`, done: false })
 );
+*/
 
 class App extends Component {
-
+  /* 리덕스 사용 전 코드
   state = {
     input: '',
     // todos: [
@@ -88,6 +92,15 @@ class App extends Component {
           onToggle={handleToggle}
           onRemove={handleRemove}
         />
+      </PageTemplate>
+    );
+  }
+  */
+  render() {
+    return (
+      <PageTemplate>
+        <TodoInputContainer />
+        <TodoListContainer />
       </PageTemplate>
     );
   }
