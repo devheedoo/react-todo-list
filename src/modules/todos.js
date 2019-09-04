@@ -40,14 +40,14 @@ export default handleActions({
     // const { payload: index } = action;
     // return state.updateIn([index, 'done'], done => !done);
     const { payload: id } = action;
-    const index = state.findIndex(todo => todo.id === id);
+    const index = state.findIndex(todo => todo.get('id') === id);
     return state.updateIn([index, 'done'], done => !done);
   },
   [REMOVE]: (state, action) => {
     // const { payload: index } = action;
     // return state.delete(index);
     const { payload: id } = action;
-    const index = state.findIndex(todo => todo.id === id);
+    const index = state.findIndex(todo => todo.get('id') === id);
     return state.delete(index);
   }
 }, initialState);
