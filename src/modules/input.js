@@ -9,6 +9,7 @@ export const setInput = createAction(SET_INPUT);
 
 // 초기 상태 정의하기
 const initialState = Map({
+  // 일정 추가하는 input 값
   value: ''
 });
 
@@ -18,4 +19,3 @@ export default handleActions({
     return state.set('value', action.payload);
   }
 }, initialState);
-
